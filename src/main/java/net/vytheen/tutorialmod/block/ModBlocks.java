@@ -23,6 +23,12 @@ public class ModBlocks {
                     .mapColor(MapColor.PINK)
             ));
 
+    public static final Block RAW_PINK_GARNET_BLOCK = registerBlock("raw_pink_garnet_block",
+            new Block(AbstractBlock.Settings.create()
+                    .strength(5.0F, 6.0F)
+                    .mapColor(MapColor.DULL_PINK)
+            ));
+
 //new AmethystBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).strength(1.5F).sounds(BlockSoundGroup.AMETHYST_BLOCK).requiresTool())
 //	);
 
@@ -42,6 +48,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(fabricItemGroupEntries -> {
             fabricItemGroupEntries.add(ModBlocks.PINK_GARNET_BLOCK);
+            fabricItemGroupEntries.add(ModBlocks.RAW_PINK_GARNET_BLOCK);
         });
     }
 
