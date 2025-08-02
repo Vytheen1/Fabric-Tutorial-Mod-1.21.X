@@ -3,6 +3,7 @@ package net.vytheen.tutorialmod.block;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -11,6 +12,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.vytheen.tutorialmod.TutorialMod;
 
 public class ModBlocks {
@@ -28,6 +30,13 @@ public class ModBlocks {
                     .strength(5.0F, 6.0F)
                     .mapColor(MapColor.DULL_PINK)
             ));
+
+    public static final Block PINK_GARNET_ORE = registerBlock("pink_garnet_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5),
+                    AbstractBlock.Settings.create().strength(3f).requiresTool()));
+    public static final Block PINK_GARNET_DEEPSLATE_ORE = registerBlock("pink_garnet_deepslate_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(3, 6),
+                    AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
 
 //new AmethystBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).strength(1.5F).sounds(BlockSoundGroup.AMETHYST_BLOCK).requiresTool())
 //	);
